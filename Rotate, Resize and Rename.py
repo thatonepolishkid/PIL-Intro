@@ -4,7 +4,8 @@ from PIL import Image
 folder_dir = r'C:\Users\<INSERT USER HERE>\Desktop\phone_pictures'
 destination_dir = r'C:\Users\<INSERT USER HERE>\Desktop\move pictures to folder\\'
 
-def rename_image(folder):
+def rename_img(folder):
+    '''If OSError has been raised, this means that the file which is trying to be converted is unable to do so.'''
     for infile in os.listdir(folder):
         f, e = os.path.splitext(infile)
         outfile = f + ".JPEG"
@@ -27,6 +28,6 @@ def shape_rotate_img(folder):
 
 
 os.chdir(folder_dir)
-rename_image(folder_dir)
+rename_img(folder_dir)
 os.chdir(destination_dir)
 shape_rotate_img(destination_dir)
