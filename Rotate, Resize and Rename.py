@@ -18,6 +18,7 @@ def rename_image(folder):
 
 
 def shape_rotate_img(folder):
+    '''Change the parameters inside of the im.resize() and im.rotate() as necesary for sizing and rotating needs.'''
     for infile in os.listdir(folder):
         im = Image.open(infile)
         im = im.resize((128, 128))
